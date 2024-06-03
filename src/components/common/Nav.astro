@@ -1,0 +1,34 @@
+---
+const navItems = [
+    {
+        href: "#aboutme",
+        label: "Sobre Mí"
+    },
+    {
+        href: "#projects",
+        label: "Proyectos"
+    },
+    {
+        href: "#skills",
+        label: "Habilidades"
+    },
+    {
+        href: "#certifications",
+        label: "Certificaciones"
+    }
+]
+---
+
+<nav class="bg-cBlack max-w-xl mx-auto flex justify-center gap-6 py-2 rounded-full
+text-lg"> 
+    {
+        navItems.map(({ label, href }) => (
+            <a
+                class="hover:bg-neutral-700 px-2 py.5 rounded-full"
+                href={href}
+            >
+                {label}
+            </a>
+        ))
+    }
+</nav>
