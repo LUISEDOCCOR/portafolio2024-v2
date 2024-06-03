@@ -5,7 +5,10 @@ export default {
 		extend: {
 			colors: {
 				cBlack: "#151515",
-				cWhite: "#1f1f1f"
+				cWhite: "#1f1f1f",
+				cYellow: "#fef08a",
+				cBlue: "#99f6e4",
+				cPink: "#f5d0fe"
 			}
 		},
 	},

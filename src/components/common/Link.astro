@@ -1,0 +1,24 @@
+---
+interface Props {
+    href: string
+    label: string
+    isBig: boolean
+}
+
+const { href, label, isBig } = Astro.props
+---
+
+<a class:list={[
+    `bg-neutral-700 px-2 rounded-full py-1 border-2 border-transparent font-medium
+    hover:bg-transparent hover:border-neutral-700 transition-colors flex items-center gap-4 w-full justify-center`,
+    {
+        "text-2xl": isBig,
+        "text-lg": !isBig
+    }     
+]}
+    href={href} 
+    target="_blank"
+>
+    <slot/>
+    {label}
+</a>

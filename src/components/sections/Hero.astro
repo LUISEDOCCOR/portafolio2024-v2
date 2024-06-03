@@ -1,0 +1,29 @@
+---
+import Link from "../common/Link.astro"
+import Github from "../Icons/Github.astro"
+import Gmail from "../Icons/Gmail.astro"
+---
+
+<section id="aboutme" class="mt-36 scroll-mt-16">
+    <img 
+        class="w-16 h-16 object-cover object-center aspect-square rounded-full" 
+        src="/profile.webp" 
+        alt="Image Profile Luis"
+    >
+    <article class="mt-8">
+        <h1 class="text-5xl font-bold">Hey, soy Luis Eduardo 🖐</h1>
+        <p class="text-4xl font-light mt-6 leading-snug">
+            +1 de experiencia. <strong class="text-cYellow font-normal">Desarrollador Front-end y Back-End.</strong> 
+            <strong class="text-cBlue font-normal">Programador autodidacta.</strong> 
+            <strong class="text-cPink font-normal">Entusiasta en la programación.</strong>
+        </p>
+        <div class="mt-8 space-x-5 grid grid-cols-2 w-1/2">
+            <Link label="GitHub" href="https://github.com/LUISEDOCCOR" isBig={true}>
+                <Github/>
+            </Link>
+            <Link label="Contacto" href="" isBig={true}>
+                <Gmail/>
+            </Link>
+        </div>
+    </article>
+</section>
