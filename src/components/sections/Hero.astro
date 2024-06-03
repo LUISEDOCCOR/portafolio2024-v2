@@ -17,12 +17,12 @@ import Gmail from "../Icons/Gmail.astro"
             <strong class="text-cBlue font-normal">Programador autodidacta.</strong> 
             <strong class="text-cPink font-normal">Entusiasta en la programación.</strong>
         </p>
-        <div class="mt-8 space-x-5 grid grid-cols-2 w-1/2">
+        <div class="mt-8 space-x-5 grid grid-cols-2 w-1/3">
             <Link label="GitHub" href="https://github.com/LUISEDOCCOR" isBig={true}>
-                <Github/>
+                <Github slot="before"/>
             </Link>
             <Link label="Contacto" href="" isBig={true}>
-                <Gmail/>
+                <Gmail slot="before"/>
             </Link>
         </div>
     </article>

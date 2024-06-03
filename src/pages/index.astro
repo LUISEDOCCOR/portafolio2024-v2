@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/common/Nav.astro';
 //Sections
 import Hero from '../components/sections/Hero.astro';
+import Projects from '../components/sections/Projects.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -10,4 +11,7 @@ import Hero from '../components/sections/Hero.astro';
 		<Nav/>
 		<Hero/>
 	</header>
+	<main class="mt-36 space-y-32">
+		<Projects/>
+	</main>
 </Layout>

@@ -1,0 +1,21 @@
+---
+const { name, styles } = Astro.props
+import React from "./ReactIcon.astro"
+import Supabase from "./Supabase.astro"
+import Tailwind from "./Tailwind.astro"
+import AstroIcon from "./AstroIcon.astro"
+import Vite from "./Vite.astro"
+---
+
+
+{
+    name == "tailwind" ? 
+    (<Tailwind styles={styles}/>) :
+    name == "supabase" ?
+    (<Supabase styles={styles}/>) :
+    name == "react" ?
+    (<React styles={styles}/>) : 
+    name == "vite" ?
+    (<Vite styles={styles}/>):
+    (<AstroIcon styles={styles}/>)
+}
