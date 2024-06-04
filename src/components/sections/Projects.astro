@@ -1,4 +1,5 @@
 ---
+import type { ActionError } from "astro:actions"
 import Code from "../Icons/Code.astro"
 import Card from "../common/Card.astro"
 
@@ -8,8 +9,7 @@ const projects = [
         image: "/edutask.webp",
         title: "Edutask",
         content: `Gestiona tus tareas diarias de manera eficiente, establece recordatorios 
-        y realiza un seguimiento de tu progreso. 
-        Nuestra interfaz intuitiva hace que la productividad sea pan comido.`,
+        y realiza un seguimiento de tu progreso.`,
         preview: "https://www.edutask.online/",
         github: "https://github.com/LUISEDOCCOR/EduTask",
         stack: ["tailwind", "supabase", "astro", "react"]
@@ -44,28 +44,14 @@ const community = [
     </header>
     <main class="mt-24 space-y-12">
         {
-            projects.map(({image, title, content, preview, github, stack}) => (
-                <Card 
-                    image={image} 
-                    title={title} 
-                    content={content} 
-                    preview={preview} 
-                    github={github}  
-                    stack={stack}
-                />
+            projects.map((props) => (
+                <Card {...props}/>
             ))
         } 
         <h3 class="text-2xl font-semibold">Comunidad</h3>
         {
-            community.map(({image, title, content, preview, github, stack}) => (
-                <Card 
-                    image={image} 
-                    title={title} 
-                    content={content} 
-                    preview={preview} 
-                    github={github}  
-                    stack={stack}
-                />
+            community.map((props) => (
+                <Card {...props}/>
             ))
         } 
     </main>

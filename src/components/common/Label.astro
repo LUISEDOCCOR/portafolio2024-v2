@@ -1,0 +1,11 @@
+---
+import IconsDev from "../Icons/dev/IconsDev.astro"
+const { title, name } = Astro.props 
+---
+
+<div class="flex items-center gap-2 bg-neutral-900 px-8 py-2 rounded-full 
+    hover:scale-110 transition-transform border border-neutral-700"
+>
+    <IconsDev name={name}/>
+    <span class="text-xl font-semibold">{title}</span>
+</div>

@@ -5,17 +5,32 @@ import Supabase from "./Supabase.astro"
 import Tailwind from "./Tailwind.astro"
 import AstroIcon from "./AstroIcon.astro"
 import Vite from "./Vite.astro"
+import Html from "./Html.astro"
+import Css from "./Css.astro"
+import Python from "./Python.astro"
 ---
 
 
 {
     name == "tailwind" ? 
     (<Tailwind styles={styles}/>) :
+    
     name == "supabase" ?
     (<Supabase styles={styles}/>) :
+    
     name == "react" ?
     (<React styles={styles}/>) : 
+    
     name == "vite" ?
     (<Vite styles={styles}/>):
+    
+    name == "html" ?
+    (<Html styles={styles}/>):
+    
+    name == "css" ?
+    (<Css styles={styles}/>):
+    
+    name == "python" ?
+    (<Python styles={styles}/>):
     (<AstroIcon styles={styles}/>)
 }
