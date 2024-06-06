@@ -29,12 +29,12 @@ const certifications = [
     }
 ]
 ---
-<section id="certifications" class="scroll-mt-16">
+<section id="certifications" class="scroll-mt-16 px-4 xl:px-0">
     <header class="flex items-center gap-3">
         <CertificationIcon/>
         <h2 class="text-4xl font-bold">Certificaciones</h2>
     </header>
-    <main class="mt-24 grid grid-cols-2 gap-8">
+    <main class="mt-24 grid gap-8 grid-cols-1 xl:grid-cols-2">
         {
             certifications.map((props) => (
                 <CertificationCard {...props}/>
