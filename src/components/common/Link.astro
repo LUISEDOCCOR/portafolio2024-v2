@@ -3,18 +3,24 @@ interface Props {
     href: string
     label: string
     isBig: boolean
+    isPrimary: boolean
 }
 
-const { href, label, isBig } = Astro.props
+const { href, label, isBig, isPrimary } = Astro.props
 ---
 
 <a class:list={[
-    `bg-neutral-700 px-2 rounded-full py-1 border-2 border-transparent font-medium
-    hover:bg-transparent hover:border-neutral-700 transition-colors flex items-center w-full justify-center`,
+    `px-2 rounded-full py-1.5 border-2 font-medium
+    transition-colors flex items-center w-full justify-center
+    hover:opacity-65 transition-opacity`,
     {
         "text-md gap-2": !isBig,
         "text-xl gap-3": isBig
-    }     
+    },
+    {
+        "bg-neutral-700 hover:border-neutral-700 border-transparent": isPrimary,
+        "bg-transparent border-neutral-700": !isPrimary
+    }      
 ]}
     href={href} 
     target="_blank"

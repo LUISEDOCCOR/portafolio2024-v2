@@ -14,22 +14,24 @@ import IconsDev from "../Icons/dev/IconsDev.astro"
             <section class="flex justify-center items-center gap-8 mt-5">
             {
                 stack.map((name) => (
-                    <IconsDev styles="hover:scale-125 transition-transform" name={name}/>
+                    <IconsDev name={name}/>
                 ))
             }
             </section>
             )
         }
         <div class="grid grid-cols-2 w-full mt-5 gap-2">
-            <Link href={github} label="GitHub" isBig={false}><Github slot="before"/></Link>
-            <Link href={preview} label="Web" isBig={false}><Arrow slot="after"/></Link>
+            <Link isPrimary={false} href={github} label="GitHub" isBig={false}><Github slot="before"/></Link>
+            <Link isPrimary={true} href={preview} label="Web" isBig={false}><Arrow slot="after"/></Link>
         </div>
     </section>
     <section class="overflow-hidden w-full xl:w-1/2">
-        <img 
-            class="object-cover object-center hover:scale-110 transition-transform"
-            src={image} 
-            alt={`project image ${title}`}
-        >
+        <a target="_blank" href={preview}>
+            <img 
+                class="object-cover object-center hover:scale-110 transition-transform"
+                src={image} 
+                alt={`project image ${title}`}
+            >
+        </a>
     </section>
 </article>

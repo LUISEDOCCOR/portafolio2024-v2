@@ -19,12 +19,12 @@ const navItems = [
 ]
 ---
 
-<nav class="bg-cBlack max-w-xl mx-auto justify-center gap-6 py-2 rounded-full
-text-lg hidden xl:flex"> 
+<nav class="bg-cBlack w-3/4 px-2  mx-auto justify-center py-2 rounded-full
+text-lg hidden grid-cols-4 xl:grid"> 
     {
         navItems.map(({ label, href }) => (
             <a
-                class="hover:bg-neutral-700 px-2 py.5 rounded-full"
+                class="text-center hover:bg-neutral-700 transition-colors py.5 rounded-full"
                 href={href}
             >
                 {label}
