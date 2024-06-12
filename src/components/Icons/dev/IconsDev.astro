@@ -8,6 +8,8 @@ import Vite from "./Vite.astro"
 import Html from "./Html.astro"
 import Css from "./Css.astro"
 import Python from "./Python.astro"
+import Psql from "./Psql.astro"
+import Golang from "./Golang.astro"
 ---
 
 
@@ -32,5 +34,12 @@ import Python from "./Python.astro"
     
     name == "python" ?
     (<Python styles={styles}/>):
+
+    name == "psql" ?
+    (<Psql styles={styles}/>):
+
+    name == "golang" ?
+    (<Golang styles={styles}/>):
+
     (<AstroIcon styles={styles}/>)
 }
