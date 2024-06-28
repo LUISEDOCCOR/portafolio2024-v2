@@ -5,36 +5,43 @@ import Github from "../Icons/Github.astro"
 import Arrow from "../Icons/Arrow.astro"
 import IconsDev from "../Icons/dev/IconsDev.astro"
 ---
-<article 
+<section
     class="flex overflow-hidden rounded-lg border border-neutral-700 bg-neutral-900 
-    flex-col-reverse card xl:flex-row"
+    flex-col-reverse scroll-animation xl:flex-row"
 >
-    <section class="flex justify-center items-center flex-col p-6 gap-2 w-full xl:w-1/2">
-        <h3 class="text-2xl font-semibold">{title}</h3>
-        <p class="text-lg">{content}</p>
-        {
-            stack && (
-            <section class="flex justify-center items-center gap-8 mt-5">
+
+    <div class="flex justify-center items-center flex-col p-6 gap-2 w-full xl:w-1/2">
+        <header class="flex justify-center items-center flex-col gap-2 w-full">
+            <h3 class="text-2xl font-semibold">{title}</h3>
+            <p class="text-lg">{content}</p>
+        </header>
+        <main class="flex justify-center items-center flex-col gap-2 w-full">
             {
-                stack.map((name) => (
-                    <IconsDev name={name}/>
-                ))
+                stack && (
+                <aside class="flex justify-center items-center gap-8 mt-5">
+                {
+                    stack.map((name) => (
+                        <IconsDev name={name}/>
+                    ))
+                }
+                </aside>
+                )
             }
-            </section>
-            )
-        }
-        <div class="grid grid-cols-2 w-full mt-5 gap-2">
+        </main>
+        <footer class="grid grid-cols-2 w-full mt-5 gap-2">
             <Link isPrimary={false} href={github} label="GitHub" isBig={false}><Github slot="before"/></Link>
             <Link isPrimary={true} href={preview} label="Web" isBig={false}><Arrow slot="after"/></Link>
-        </div>
-    </section>
-    <section class="overflow-hidden w-full xl:w-1/2">
+        </footer>
+    </div>
+    
+    <figure class="overflow-hidden w-full xl:w-1/2">
         <a target="_blank" href={preview}>
             <img 
                 class="object-cover object-center hover:scale-110 transition-transform"
                 src={image} 
-                alt={`project image ${title}`}
+                alt={`screenshot of the project with the name  ${title}`}
             >
         </a>
-    </section>
-</article>
+    </figure>
+
+</section>
