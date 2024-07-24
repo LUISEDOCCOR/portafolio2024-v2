@@ -1,6 +1,4 @@
 ---
-import { navigate } from "astro:transitions/client"
-import IconsDev from "../Icons/dev/IconsDev.astro"
 const { title, name } = Astro.props 
 ---
 
@@ -8,7 +6,7 @@ const { title, name } = Astro.props
     border border-neutral-700 scroll-animation"
 >
    <div class="flex items-center gap-2 hover:scale-110 transition-transform">
-        <i class={`devicon-${name}-plain colored`}></i>
+         <img height="20" width="20" src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-original.svg`} />
         <span class="text-xl font-semibold">{title}</span>
     </div>
 </section>

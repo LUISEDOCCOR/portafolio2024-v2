@@ -20,8 +20,7 @@ import Arrow from "../Icons/Arrow.astro"
                 <aside class="flex justify-center items-center gap-8 mt-5">
                 {
                     stack.map((name) => (
-                        <i class={`devicon-${name}-plain colored text-2xl`}></i>
-
+                        <img height="20" width="20" src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-original.svg`} />
                     ))
                 }
                 </aside>
