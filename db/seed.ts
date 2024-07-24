@@ -1,4 +1,4 @@
-import { db, Certifications } from "astro:db";
+import { db, Certifications, Skills } from "astro:db";
 
 // https://astro.build/db/seed
 export default async function seed() {
@@ -27,6 +27,33 @@ export default async function seed() {
       title: "Master en Python: Aprender Python 3, Django, Flask y Tkinter",
       content: "Curso sobre backend con django",
       link: "https://udemy-certificate.s3.amazonaws.com/image/UC-d39174ac-83e2-4138-925a-16d4458b585b.jpg?v=1703626184000",
+    },
+  ]);
+
+  await db.insert(Skills).values([
+    {
+      name: "React",
+    },
+    {
+      name: "HTML5",
+    },
+    {
+      name: "CSS3",
+    },
+    {
+      name: "ViteJS",
+    },
+    {
+      name: "Astro",
+    },
+    {
+      name: "Python",
+    },
+    {
+      name: "Tailwindcss",
+    },
+    {
+      name: "Go",
     },
   ]);
 }

@@ -3,7 +3,6 @@ const {image, title, content, preview, github, stack} = Astro.props
 import Link from "./Link.astro"
 import Github from "../Icons/Github.astro"
 import Arrow from "../Icons/Arrow.astro"
-import IconsDev from "../Icons/dev/IconsDev.astro"
 ---
 <section
     class="flex overflow-hidden rounded-lg border border-neutral-700 bg-neutral-900 
@@ -21,7 +20,8 @@ import IconsDev from "../Icons/dev/IconsDev.astro"
                 <aside class="flex justify-center items-center gap-8 mt-5">
                 {
                     stack.map((name) => (
-                        <IconsDev name={name}/>
+                        <i class={`devicon-${name}-plain colored`}></i>
+
                     ))
                 }
                 </aside>

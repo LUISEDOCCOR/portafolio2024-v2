@@ -1,17 +1,19 @@
 ---
 import Label from "../common/Label.astro"
+import { db, Skills as skills } from "astro:db";
+
+const skillsData = await db.select().from(skills)
+
 ---
 <section id="skills" class="scroll-mt-16 px-4 xl:px-0">
     <header>
         <h2 class="text-4xl font-bold scroll-animation">Habilidades</h2>
     </header>
     <main class="mt-24 flex flex-wrap justify-center items-center gap-6">
-        <Label title="React" name="react"/>
-        <Label title="Astro" name="astro"/>
-        <Label title="Tailwind" name="tailwind"/>
-        <Label title="Vite" name="vite"/>
-        <Label title="html" name="html"/>
-        <Label title="css" name="css"/>
-        <Label title="Python" name="python"/>
+        {
+            skillsData.map(({name})=>(
+                <Label title={name} name={name.toLowerCase()}/>
+            ))
+        }
     </main>
 </section>
