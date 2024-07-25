@@ -8,23 +8,15 @@ const data = await db.select().from(Images).where(eq(Images.name, "profile"))
 const profile = data.length == 0 ? "/profile.webp" : data[0].src
 ---
 
-<section id="aboutme" class="scroll-mt-16 px-4 mt-12 xl:mt-36 xl:px-0">
-    <img 
-        class="w-28 h-28 object-cover object-center aspect-square rounded-full" 
-        src={profile}
-        alt="Image Profile Luis"
-    >
-    <div class="mt-8">
-        <div class="text-4xl xl:text-5xl flex items-center gap-2">
-            <h1 class="font-bold" aria-label="Luis Eduardo Ocegueda Cortes" >Hey, soy Luis Eduardo</h1>
-            <span id="hero-hand" >🖐</span>
-        </div>            
-        <p class="font-light mt-6 leading-snug text-3xl xl:text-4xl">
+<section id="aboutme" class="scroll-mt-16 flex items-center flex-col-revers px-4 mt-12 gap-14 xl:gap-28 xl:flex-row xl:mt-36 xl:px-0">
+    <div>
+            <span class="text-4xl xl:text-5xl"><h1 class="font-bold leading-sung" >Hey, soy Luis Eduardo <span id="hero-hand" >🖐</span></h1></span>
+            <p class="font-light mt-6 leading-relaxed text-3xl xl:text-4xl">
             +1 año de experiencia. <strong class="text-cYellow font-normal">Desarrollador Front-end y Back-End.</strong> 
             <strong class="text-cBlue font-normal">Programador autodidacta.</strong> 
             <strong class="text-cPink font-normal">Entusiasta en la programación.</strong>
         </p>
-        <div class="mt-8 space-x-5 grid grid-cols-2 w-3/4 xl:w-2/5">
+        <div class="mt-8 space-x-5 grid grid-cols-2 w-3/4">
             <Link isPrimary={false} label="GitHub" href="https://github.com/LUISEDOCCOR" isBig={true}>
                 <Github slot="before"/>
             </Link>
@@ -33,8 +25,13 @@ const profile = data.length == 0 ? "/profile.webp" : data[0].src
             </Link>
         </div>
     </div>
+     <img 
+        class="w-80 h-80 object-cover object-center aspect-square rounded-lg  border border-neutral-700" 
+        src={profile}
+        alt="Image Profile Luis"
+    >
 </section>
-<style>
+<!-- <style>
 #hero-hand{
     animation: hand 1s 1 alternate ease-in-out;
     &:hover{
@@ -53,4 +50,4 @@ const profile = data.length == 0 ? "/profile.webp" : data[0].src
     }
     
 }
-</style>
+</style> -->
