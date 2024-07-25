@@ -1,4 +1,4 @@
-import { db, Certifications, Skills } from "astro:db";
+import { db, Certifications, Skills, Images, Projects } from "astro:db";
 
 // https://astro.build/db/seed
 export default async function seed() {
@@ -54,6 +54,50 @@ export default async function seed() {
     },
     {
       name: "Go",
+    },
+    {
+      name: "Express",
+    },
+    {
+      name: "Linux",
+    },
+  ]);
+
+  await db.insert(Images).values([
+    {
+      name: "profile",
+      src: "https://i.postimg.cc/65T8Tr1T/profile.jpg",
+    },
+  ]);
+
+  await db.insert(Projects).values([
+    {
+      image: "/edutask.webp",
+      title: "Edutask",
+      content:
+        "Gestiona tus tareas diarias de manera eficiente, establece recordatorios y realiza un seguimiento de tu progreso.",
+      preview: "https://www.edutask.online/",
+      github: "https://github.com/LUISEDOCCOR/EduTask",
+      stack: ["tailwindcss", "supabase", "astro", "react"],
+    },
+    {
+      image: "/codetopia.webp",
+      title: "Codetopia",
+      content:
+        "Codetopia es una aplicación de foro de programación diseñada para facilitar el intercambio de conocimientos y experiencias entre desarrolladores. Creada con React y Golang",
+      preview: "https://codetopia.vercel.app/",
+      github: "https://github.com/LUISEDOCCOR/forum-front",
+      stack: ["tailwindcss", "react", "vitejs", "go", "postgresql"],
+    },
+    {
+      image: "/hackafor.webp",
+      title: "Hackafor",
+      content: `En este proyecto, que pertenece a @afor_digital, streamer en twitch, 
+        he aportado haciendo una página 404 y añadido una cuenta regresiva en el Hero`,
+      preview: "https://hackafor-2.vercel.app/",
+      github: "https://github.com/Afordin/hackafor-2",
+      stack: [],
+      isOpenSource: true,
     },
   ]);
 }

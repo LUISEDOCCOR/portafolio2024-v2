@@ -1,13 +1,15 @@
 import { defineDb, column, defineTable } from "astro:db";
 
-const Project = defineTable({
+const Projects = defineTable({
   columns: {
     id: column.number({ primaryKey: true }),
-    name: column.text(),
+    title: column.text(),
     content: column.text(),
     stack: column.json(),
-    deploy: column.text(),
+    preview: column.text(),
     github: column.text(),
+    image: column.text(),
+    isOpenSource: column.boolean({ default: false }),
   },
 });
 
@@ -27,11 +29,20 @@ const Certifications = defineTable({
   },
 });
 
+const Images = defineTable({
+  columns: {
+    id: column.number({ primaryKey: true }),
+    name: column.text({ unique: true }),
+    src: column.text(),
+  },
+});
+
 // https://astro.build/db/config
 export default defineDb({
   tables: {
-    Project,
+    Projects,
     Skills,
     Certifications,
+    Images,
   },
 });

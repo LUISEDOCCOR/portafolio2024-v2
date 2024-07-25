@@ -1,38 +1,11 @@
 ---
+import { db, Projects as ProjectsDB } from "astro:db"
 import Card from "../common/Card.astro"
+import { eq } from "astro:db"
 
 
-const projects = [
-    {
-        image: "/edutask.webp",
-        title: "Edutask",
-        content: `Gestiona tus tareas diarias de manera eficiente, establece recordatorios 
-        y realiza un seguimiento de tu progreso.`,
-        preview: "https://www.edutask.online/",
-        github: "https://github.com/LUISEDOCCOR/EduTask",
-        stack: ["tailwindcss", "supabase", "astro", "react"]
-    },
-    {
-        image: "/codetopia.webp",
-        title: "Codetopia",
-        content: `Codetopia es una aplicación de foro de programación diseñada para facilitar el intercambio
-        de conocimientos y experiencias entre desarrolladores. Creada con React y Golang`,
-        preview: "https://codetopia.vercel.app/",
-        github: "https://github.com/LUISEDOCCOR/forum-front",
-        stack: ["tailwindcss", "react", "vitejs", "go", "postgresql"]
-    }
-]
-const community = [
-    {
-        image: "/hackafor.webp",
-        title: "Hackafor",
-        content: `En este proyecto, que pertenece a @afor_digital, streamer en twitch, 
-        he aportado haciendo una página 404 y añadido una cuenta regresiva en el Hero`,
-        preview: "https://hackafor-2.vercel.app/",
-        github: "https://github.com/Afordin/hackafor-2",
-        stack: ""
-    }
-]
+const projects = await db.select().from(ProjectsDB).where(eq(ProjectsDB.isOpenSource, false))
+const community = await db.select().from(ProjectsDB).where(eq(ProjectsDB.isOpenSource, true))
 ---
 
 <section id="projects" class="scroll-mt-16 px-4 xl:px-0">

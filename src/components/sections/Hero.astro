@@ -1,13 +1,17 @@
 ---
+import { db, eq ,Images } from "astro:db"
 import Link from "../common/Link.astro"
 import Github from "../Icons/Github.astro"
 import Gmail from "../Icons/Gmail.astro"
+
+const data = await db.select().from(Images).where(eq(Images.name, "profile")) 
+const profile = data.length == 0 ? "/profile.webp" : data[0].src
 ---
 
 <section id="aboutme" class="scroll-mt-16 px-4 mt-12 xl:mt-36 xl:px-0">
     <img 
         class="w-28 h-28 object-cover object-center aspect-square rounded-full" 
-        src="/profile.webp" 
+        src={profile}
         alt="Image Profile Luis"
     >
     <div class="mt-8">
