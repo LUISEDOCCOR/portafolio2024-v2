@@ -1,35 +1,54 @@
 ---
-import { db, eq ,Images } from "astro:db"
-import Link from "../common/Link.astro"
-import Github from "../Icons/Github.astro"
-import Gmail from "../Icons/Gmail.astro"
-
-const data = await db.select().from(Images).where(eq(Images.name, "profile")) 
-const profile = data.length == 0 ? "/profile.webp" : data[0].src
+import Link from "../common/Link.astro";
+import Github from "../Icons/Github.astro";
+import Gmail from "../Icons/Gmail.astro";
 ---
 
-<section id="aboutme" class="scroll-mt-16 flex items-center flex-col-revers px-4 mt-12 gap-14 xl:gap-28 xl:flex-row xl:mt-36 xl:px-0">
+<section
+    id="aboutme"
+    class="scroll-mt-16 flex items-center flex-col-revers px-4 mt-12 gap-14 xl:gap-28 xl:flex-row xl:mt-36 xl:px-0"
+>
     <div>
-            <span class="text-4xl xl:text-5xl"><h1 class="font-bold leading-sung" >Hey, soy Luis Eduardo <span id="hero-hand" >🖐</span></h1></span>
-            <p class="font-light mt-6 leading-relaxed text-3xl xl:text-4xl">
-            +1 año de experiencia. <strong class="text-cYellow font-normal">Desarrollador Front-end y Back-End.</strong> 
-            <strong class="text-cBlue font-normal">Programador autodidacta.</strong> 
-            <strong class="text-cPink font-normal">Entusiasta en la programación.</strong>
+        <span class="text-4xl xl:text-5xl"
+            ><h1 class="font-bold leading-sung">
+                Hey, soy Luis Eduardo <span id="hero-hand">🖐</span>
+            </h1></span
+        >
+        <p class="font-light mt-6 leading-relaxed text-3xl xl:text-4xl">
+            +1 año de experiencia. <strong class="text-cYellow font-normal"
+                >Desarrollador Front-end y Back-End.</strong
+            >
+            <strong class="text-cBlue font-normal"
+                >Programador autodidacta.</strong
+            >
+            <strong class="text-cPink font-normal"
+                >Entusiasta en la programación.</strong
+            >
         </p>
         <div class="mt-8 space-x-5 grid grid-cols-2 w-3/4">
-            <Link isPrimary={false} label="GitHub" href="https://github.com/LUISEDOCCOR" isBig={true}>
-                <Github slot="before"/>
+            <Link
+                isPrimary={false}
+                label="GitHub"
+                href="https://github.com/LUISEDOCCOR"
+                isBig={true}
+            >
+                <Github slot="before" />
             </Link>
-            <Link isPrimary={true} label="Contacto" href="mailto:luiseduardoocegueda@gmail.com" isBig={true}>
-                <Gmail slot="before"/>
+            <Link
+                isPrimary={true}
+                label="Contacto"
+                href="mailto:luiseduardoocegueda@gmail.com"
+                isBig={true}
+            >
+                <Gmail slot="before" />
             </Link>
         </div>
     </div>
-     <img 
-        class="w-80 h-80 object-cover object-center aspect-square rounded-lg  border border-neutral-700" 
-        src={profile}
+    <img
+        class="w-80 h-80 object-cover object-center aspect-square rounded-lg border border-neutral-700"
+        src="/profile.jpg"
         alt="Image Profile Luis"
-    >
+    />
 </section>
 <!-- <style>
 #hero-hand{
@@ -48,6 +67,6 @@ const profile = data.length == 0 ? "/profile.webp" : data[0].src
     100%{
         transform: rotate(0deg) ;
     }
-    
+
 }
 </style> -->
